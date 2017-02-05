@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Petagram</string>
+    <string name="texto_boton_click">Click</string>
+    <string name="saludo">Holis :3</string>
+    <string name="texto_action">Acción</string>
+    <string-array name="planetas">
+        <item>Mercurio</item>
+        <item>Venus</item>
+        <item>Tierra</item>
+        <item>Martes</item>
+        <item>Jupiter</item>
+    </string-array>
+    <string name="titulo_tarjeta">Tarjetica</string>
+    <string name="descripcion_tarjeta">Tarjeta chevere :3</string>
+
 </resources>
