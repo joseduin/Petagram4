@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:htext="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+    android:layout_marginRight="@dimen/activity_horizontal_margin"
+    android:layout_marginTop="@dimen/activity_vertical_margin"
+    app:cardElevation="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/cardImagen"
+            android:src="@drawable/husky"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:scaleType="fitXY"/>
+
+        <RelativeLayout
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/addFav"
+                android:src="@drawable/hueso"
+                android:background="@color/colorTransparente"
+                android:scaleType="fitXY"
+                android:layout_marginRight="@dimen/activity_vertical_margin"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size" />
+
+            <TextView
+                android:text="Toby"
+                android:id="@+id/cardNombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:textSize="@dimen/card_text_size"
+                android:layout_toRightOf="@+id/addFav"
+                android:layout_toEndOf="@+id/addFav" />
+
+            <ImageButton
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                app:srcCompat="@drawable/hueso_amarillo"
+                android:background="@color/colorTransparente"
+                android:scaleType="fitXY"
+                android:layout_marginLeft="@dimen/activity_vertical_margin"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:id="@+id/like" />
+
+            <TextView
+                android:text="5"
+                android:textSize="@dimen/card_text_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/like"
+                android:layout_toStartOf="@+id/like"
+                android:id="@+id/countLikes" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>
