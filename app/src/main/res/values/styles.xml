@@ -16,4 +16,18 @@
         <item name="android:textColor">@color/colorBlanco</item>
     </style>
 
+    <!--Etiqueta flotante-->
+    <style name="AppTheme.FloatingLabel" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">@dimen/floating_label</item>
+    </style>
+
+    <!--Campo de texto-->
+    <style name="EditText" parent="AppTheme">
+        <!-- cursor y línea normal-->
+        <item name="colorControlNormal">@color/colorAccent</item>
+        <!-- cursor y línea con foco-->
+        <item name="colorControlActivated">@color/colorPrimary</item>
+    </style>
+
 </resources>

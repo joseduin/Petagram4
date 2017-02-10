@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_contacto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="joseduin.petagram.Contacto">
+
+    <include android:id="@+id/miActionbarContacto"
+        layout="@layout/toolbar"></include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="@dimen/activity_vertical_margin"
+        android:layout_marginRight="@dimen/activity_vertical_margin">
+
+        <TextView
+            android:text="@string/contacto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/titulo_size"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/inputLayoutNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/correo_nombre"
+            hintTextAppearance="@style/AppTheme.FloatingLabel">
+
+            <EditText
+                android:id="@+id/textNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/inputLayoutCorreo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/correo_correo"
+            hintTextAppearance="@style/AppTheme.FloatingLabel">
+
+            <EditText
+                android:id="@+id/textCorreo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/inputLayoutMensaje"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/correo_mensaje"
+            android:hint="@string/correo_mensaje"
+            hintTextAppearance="@style/AppTheme.FloatingLabel">
+
+            <EditText
+                android:id="@+id/textMensaje"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="none"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:text="@string/correo_boton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/texto"
+            android:theme="@style/MiBotonRaised"
+            android:id="@+id/enviarComentario" />
+
+    </LinearLayout>
+
+</LinearLayout>

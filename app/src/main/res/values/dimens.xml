@@ -14,4 +14,7 @@
 
     <dimen name="subir_bottom">20dp</dimen>
     <dimen name="subir_rigth">10dp</dimen>
+
+    <dimen name="floating_label">15dp</dimen>
+    <dimen name="correo_mensaje">200dp</dimen>
 </resources>

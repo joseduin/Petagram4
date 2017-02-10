@@ -12,5 +12,25 @@
     </string-array>
     <string name="titulo_tarjeta">Tarjetica</string>
     <string name="descripcion_tarjeta">Tarjeta chevere :3</string>
+    <string name="contacto">Contacto</string>
+    <string name="acerca_de">Acerca de</string>
+    <string name="correo_nombre">Nombre</string>
+    <string name="correo_correo">Correo</string>
+    <string name="correo_mensaje">Mensaje</string>
+    <string name="correo_boton">Enviar Comentario</string>
+    <string name="campo_obligatorio">Campo Obligatorio</string>
+    <string name="EMAIL">petagramcoursera@gmail.com</string>
+    <string name="PASSWORD">petagram12345</string>
+    <string name="nombre">Nombre:</string>
+    <string name="apellido">Apellido:</string>
+    <string name="edad">Edad:</string>
+    <string name="dedicacion">Dedicación:</string>
+    <string name="pais">Pais:</string>
+    <string name="pais_desc">Venezuela</string>
+    <string name="nombre_desc">Jose Miguel</string>
+    <string name="apellido_desc">Duin Garcia</string>
+    <string name="edad_desc">24 años</string>
+    <string name="dedicacion_desc">Estudiante</string>
+
 
 </resources>
