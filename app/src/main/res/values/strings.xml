@@ -31,6 +31,6 @@
     <string name="apellido_desc">Duin Garcia</string>
     <string name="edad_desc">24 años</string>
     <string name="dedicacion_desc">Estudiante</string>
-
+    <string name="fav5_not_match">Aún no posees ningún mascota favorita</string>
 
 </resources>

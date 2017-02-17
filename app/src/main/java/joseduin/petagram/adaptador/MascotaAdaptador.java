@@ -1,5 +1,6 @@
 package joseduin.petagram.adaptador;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import joseduin.petagram.R;
+import joseduin.petagram.bd.ContructorMascotas;
 import joseduin.petagram.modelo.Mascota;
 
 /**
@@ -20,10 +22,11 @@ import joseduin.petagram.modelo.Mascota;
 public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.MascotaViewHolder> {
 
     private ArrayList<Mascota> mascolas = new ArrayList<>();
-    private boolean like_validation = false;
+    private Context context;
 
-    public MascotaAdaptador(ArrayList<Mascota> mascolas) {
+    public MascotaAdaptador(ArrayList<Mascota> mascolas, Context context) {
         this.mascolas = mascolas;
+        this.context = context;
     }
 
     @Override
@@ -34,7 +37,7 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
 
     @Override
     public void onBindViewHolder(final MascotaViewHolder holder, int position) {
-        Mascota mascota = mascolas.get(position);
+        final Mascota mascota = mascolas.get(position);
         holder.cardImagen.setImageResource(mascota.getFoto());
         holder.cardNombre.setText(mascota.getNombre());
         holder.countLikes.setText(String.valueOf(mascota.getLikes()));
@@ -44,16 +47,16 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
         holder.addFav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               like(holder);
+               like(mascota, holder);
             }
         });
     }
 
-    private void like(MascotaViewHolder holder) {
-        int likes = Integer.valueOf(holder.countLikes.getText().toString());
-        likes += (like_validation) ? -1 : 1;
-        holder.countLikes.setText(String.valueOf(likes));
-        like_validation = !like_validation;
+    private void like(Mascota mascota, MascotaViewHolder holder) {
+        ContructorMascotas constructor = new ContructorMascotas(context);
+        constructor.darLikeMascota(mascota);
+
+        holder.countLikes.setText(String.valueOf(constructor.obtenerLikesMascota(mascota)));
     }
 
     @Override

@@ -6,6 +6,7 @@ package joseduin.petagram.modelo;
 
 public class Mascota {
 
+    private int id;
     private int foto;
     private String nombre;
     private String raza;
@@ -22,6 +23,14 @@ public class Mascota {
 
     public Mascota() {
 
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getFoto() {
