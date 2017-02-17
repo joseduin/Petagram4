@@ -11,3 +11,7 @@
 
 ## Modulo 1
 ![puppy](https://cloud.githubusercontent.com/assets/19161796/22373396/0bd98762-e478-11e6-978d-33777f5983a3.png)
+
+### Nota
+  Algunas personas comentan que no pueden ver todas las imagenes, no se si exista algún problema al descargar el archivo de git y se pierda el formatodo de dichas imagenes 'anydpi' (que son para cualquier tipo de pantalla).
+![issue](https://cloud.githubusercontent.com/assets/19161796/23077925/ec86ade4-f51c-11e6-8491-0542d183e7f0.png)
