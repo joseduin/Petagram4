@@ -32,5 +32,9 @@
     <string name="edad_desc">24 años</string>
     <string name="dedicacion_desc">Estudiante</string>
     <string name="fav5_not_match">Aún no posees ningún mascota favorita</string>
+    <string name="configurar_cuenta">Configurar Cuenta</string>
+    <string name="petagram">Petagram</string>
+    <string name="escribe_un_usuario">Escribe tu usuario</string>
+    <string name="guardar_cuenta">Guardar Cuenta</string>
 
 </resources>

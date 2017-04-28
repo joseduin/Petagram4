@@ -15,20 +15,24 @@ import android.widget.GridLayout;
 import android.widget.TextView;
 
 import com.mikhaellopez.circularimageview.CircularImageView;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
 import joseduin.petagram.R;
 import joseduin.petagram.adaptador.MascotaAdaptador;
 import joseduin.petagram.adaptador.MascotaPerfilAdaptador;
+import joseduin.petagram.interfaz.IPerfil;
 import joseduin.petagram.modelo.MascotaPerfil;
+import joseduin.petagram.presendador.IPerfilPresenter;
+import joseduin.petagram.presendador.PerfilPresenter;
 
-public class Perfil extends Fragment {
+public class Perfil extends Fragment implements IPerfil {
 
     private CircularImageView fotoPerfil;
     private TextView nombrePerfil;
     private RecyclerView fotosPerfil;
-
+    private IPerfilPresenter iPerfilPresenter;
     private ArrayList<MascotaPerfil> fotos_de_muro = new ArrayList<>();
 
     @Nullable
@@ -37,24 +41,12 @@ public class Perfil extends Fragment {
         View v = inflater.inflate(R.layout.activity_perfil, container, false);
 
         enlazarVistaControlador(v);
-        datosPerfil();
-        cargarFotos();
-
-        fotosPerfil.setLayoutManager(new GridLayoutManager(getActivity(), 3));
-        inicializarAdaptador();
-
+        //cargarFotos();
+        iPerfilPresenter = new PerfilPresenter(this, getContext());
         return v;
     }
 
-    public void inicializarAdaptador() {
-        MascotaPerfilAdaptador adaptador = new MascotaPerfilAdaptador(fotos_de_muro);
-        fotosPerfil.setAdapter(adaptador);
-    }
-
-    private void datosPerfil() {
-        nombrePerfil.setText("Zeus");
-    }
-
+    /*
     private void cargarFotos() {
         fotos_de_muro.add(new MascotaPerfil(R.drawable.bulldog, 10));
         fotos_de_muro.add(new MascotaPerfil(R.drawable.bulldog, 5));
@@ -75,12 +67,37 @@ public class Perfil extends Fragment {
         fotos_de_muro.add(new MascotaPerfil(R.drawable.bulldog, 16));
         fotos_de_muro.add(new MascotaPerfil(R.drawable.bulldog, 21));
         fotos_de_muro.add(new MascotaPerfil(R.drawable.bulldog, 29));
-    }
+    }*/
 
     private void enlazarVistaControlador(View v) {
         fotoPerfil = (CircularImageView) v.findViewById(R.id.fotoPerfil);
         nombrePerfil = (TextView) v.findViewById(R.id.nombrePerfil);
         fotosPerfil = (RecyclerView) v.findViewById(R.id.fotosPerfil);
+    }
+
+    @Override
+    public void generarGridLayout() {
+        fotosPerfil.setLayoutManager(new GridLayoutManager(getActivity(), 3));
+    }
+
+    @Override
+    public MascotaPerfilAdaptador crearAdaptador(MascotaPerfil perfil) {
+        return new MascotaPerfilAdaptador(perfil, getActivity());
+    }
+
+    @Override
+    public void inicializarAdaptadorRV(MascotaPerfilAdaptador perfilAdaptador) {
+        fotosPerfil.setAdapter(perfilAdaptador);
+    }
+
+    @Override
+    public void mostrarPerfil(MascotaPerfil perfil) {
+        nombrePerfil.setText(perfil.getNombre());
+        Picasso.with(getContext())
+                .load(perfil.getUrlFoto())
+                .placeholder(R.drawable.dog_512)
+                .into(fotoPerfil);
+
     }
 
 }

@@ -9,4 +9,6 @@ public interface ITimelinePresenter {
     public void obtenerMascotasBaseDatos();
 
     public void mostrarMascotasRV();
+
+    public void obtenerMediosRecientes();
 }

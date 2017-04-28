@@ -72,4 +72,9 @@ public class FavoritePets extends AppCompatActivity implements ITimeline {
     public void inicializarAdaptadorRV(MascotaAdaptador mascotaAdaptador) {
         recyclerViewFav.setAdapter(mascotaAdaptador);
     }
+
+    @Override
+    public void generarGrid() {
+
+    }
 }

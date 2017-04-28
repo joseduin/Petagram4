@@ -4,6 +4,7 @@ package joseduin.petagram.bd;
  * Created by Jose on 17/2/2017.
  */
 
+// final
 public final class ConstantesBaseDatos {
 
     public final static String DATABASE_NAME = "Mascotas";

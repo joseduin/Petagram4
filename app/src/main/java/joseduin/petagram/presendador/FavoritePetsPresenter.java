@@ -37,4 +37,9 @@ public class FavoritePetsPresenter implements ITimelinePresenter {
         iTimeline.inicializarAdaptadorRV(iTimeline.crearAdaptador(mascotas));
         iTimeline.generarLayoutVertical();
     }
+
+    @Override
+    public void obtenerMediosRecientes() {
+
+    }
 }

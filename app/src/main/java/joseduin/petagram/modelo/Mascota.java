@@ -13,6 +13,16 @@ public class Mascota {
     private int edad;
     private int likes;
 
+    private String id_insta;
+    private String url_foto;
+
+    public Mascota(String id_insta, String nombre, String url_foto, int likes) {
+        this.id_insta = id_insta;
+        this.nombre = nombre;
+        this.url_foto = url_foto;
+        this.likes = likes;
+    }
+
     public Mascota(int foto, String nombre, String raza, int edad, int likes) {
         this.foto = foto;
         this.nombre = nombre;
@@ -23,6 +33,22 @@ public class Mascota {
 
     public Mascota() {
 
+    }
+
+    public String getId_insta() {
+        return id_insta;
+    }
+
+    public void setId_insta(String id_insta) {
+        this.id_insta = id_insta;
+    }
+
+    public String getUrl_foto() {
+        return url_foto;
+    }
+
+    public void setUrl_foto(String url_foto) {
+        this.url_foto = url_foto;
     }
 
     public int getId() {

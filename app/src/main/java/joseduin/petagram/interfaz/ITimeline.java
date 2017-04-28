@@ -16,4 +16,6 @@ public interface ITimeline {
     public MascotaAdaptador crearAdaptador(ArrayList<Mascota> mascotas);
 
     public void inicializarAdaptadorRV(MascotaAdaptador mascotaAdaptador);
+
+    public void generarGrid();
 }

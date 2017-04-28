@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         enlazarVistaControlador(toolbar);
         setUpViewPager();
+
     }
 
     private void enlazarVistaControlador(Toolbar toolbar) {
@@ -81,6 +82,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Log.d("ir", "acerca de");
                 iraA(Acerca_de.class);
                 return true;
+            case R.id.configurar_cuenta:
+                iraA(ConfigurarCuenta.class);
             default:
                 return super.onOptionsItemSelected(item);
         }

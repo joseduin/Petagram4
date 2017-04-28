@@ -9,6 +9,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 
 import joseduin.petagram.R;
@@ -31,25 +33,28 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
 
     @Override
     public MascotaViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_dog, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_view_grid_contacto, parent, false);
         return new MascotaViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(final MascotaViewHolder holder, int position) {
         final Mascota mascota = mascolas.get(position);
-        holder.cardImagen.setImageResource(mascota.getFoto());
-        holder.cardNombre.setText(mascota.getNombre());
+        Picasso.with(context)
+                .load(mascota.getUrl_foto())
+                .into(holder.cardImagen);
+
+//        holder.cardNombre.setText(mascota.getNombre());
         holder.countLikes.setText(String.valueOf(mascota.getLikes()));
 
         holder.cardImagen.getLayoutParams().width = holder.v.getLayoutParams().width;
 
-        holder.addFav.setOnClickListener(new View.OnClickListener() {
+        /*holder.addFav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                like(mascota, holder);
             }
-        });
+        });*/
     }
 
     private void like(Mascota mascota, MascotaViewHolder holder) {
@@ -67,7 +72,7 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
     public static class MascotaViewHolder extends RecyclerView.ViewHolder {
 
         private ImageView cardImagen;
-        private ImageButton addFav, like;
+        //private ImageButton addFav, like;
         private TextView cardNombre, countLikes;
         private View v;
 
@@ -75,9 +80,9 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
             super(itemView);
             v = itemView;
             cardImagen = (ImageView) itemView.findViewById(R.id.cardImagen);
-            addFav = (ImageButton) itemView.findViewById(R.id.addFav);
-            like = (ImageButton) itemView.findViewById(R.id.like);
-            cardNombre = (TextView) itemView.findViewById(R.id.cardNombre);
+            //addFav = (ImageButton) itemView.findViewById(R.id.addFav);
+            //like = (ImageButton) itemView.findViewById(R.id.like);
+            //cardNombre = (TextView) itemView.findViewById(R.id.cardNombre);
             countLikes = (TextView) itemView.findViewById(R.id.countLikes);
         }
     }

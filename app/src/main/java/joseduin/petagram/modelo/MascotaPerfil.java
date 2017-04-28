@@ -1,36 +1,59 @@
 package joseduin.petagram.modelo;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+
 /**
  * Created by Jose on 10/2/2017.
  */
 
-public class MascotaPerfil {
+public class MascotaPerfil implements Serializable {
 
-    private int foto;
-    private int likes;
+    private String nombre;
+    private String id;
+    private String urlFoto;
+    private ArrayList<Mascota> mascotas;
 
-    public MascotaPerfil(int foto, int likes) {
-        this.foto = foto;
-        this.likes = likes;
+    public MascotaPerfil(String nombre, String id, String urlFoto, ArrayList<Mascota> mascotas) {
+        this.nombre = nombre;
+        this.id = id;
+        this.urlFoto = urlFoto;
+        this.mascotas = mascotas;
     }
 
     public MascotaPerfil() {
 
     }
 
-    public void setFoto(int foto) {
-        this.foto = foto;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setLikes(int likes) {
-        this.likes = likes;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public int getFoto() {
-        return foto;
+    public String getId() {
+        return id;
     }
 
-    public int getLikes() {
-        return likes;
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getUrlFoto() {
+        return urlFoto;
+    }
+
+    public void setUrlFoto(String urlFoto) {
+        this.urlFoto = urlFoto;
+    }
+
+    public ArrayList<Mascota> getMascotas() {
+        return mascotas;
+    }
+
+    public void setMascotas(ArrayList<Mascota> mascotas) {
+        this.mascotas = mascotas;
     }
 }
