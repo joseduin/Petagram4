@@ -41,33 +41,9 @@ public class Perfil extends Fragment implements IPerfil {
         View v = inflater.inflate(R.layout.activity_perfil, container, false);
 
         enlazarVistaControlador(v);
-        //cargarFotos();
         iPerfilPresenter = new PerfilPresenter(this, getContext());
         return v;
     }
-
-    /*
-    private void cargarFotos() {
-        fotos_de_muro.add(new MascotaPerfil(R.drawable.bulldog, 10));
-        fotos_de_muro.add(new MascotaPerfil(R.drawable.bulldog, 5));
-        fotos_de_muro.add(new MascotaPerfil(R.drawable.bulldog, 7));
-        fotos_de_muro.add(new MascotaPerfil(R.drawable.bulldog, 9));
-        fotos_de_muro.add(new MascotaPerfil(R.drawable.bulldog, 12));
-        fotos_de_muro.add(new MascotaPerfil(R.drawable.bulldog, 1));
-        fotos_de_muro.add(new MascotaPerfil(R.drawable.bulldog, 5));
-        fotos_de_muro.add(new MascotaPerfil(R.drawable.bulldog, 2));
-        fotos_de_muro.add(new MascotaPerfil(R.drawable.bulldog, 10));
-        fotos_de_muro.add(new MascotaPerfil(R.drawable.bulldog, 96));
-        fotos_de_muro.add(new MascotaPerfil(R.drawable.bulldog, 27));
-        fotos_de_muro.add(new MascotaPerfil(R.drawable.bulldog, 8));
-        fotos_de_muro.add(new MascotaPerfil(R.drawable.bulldog, 13));
-        fotos_de_muro.add(new MascotaPerfil(R.drawable.bulldog, 32));
-        fotos_de_muro.add(new MascotaPerfil(R.drawable.bulldog, 24));
-        fotos_de_muro.add(new MascotaPerfil(R.drawable.bulldog, 82));
-        fotos_de_muro.add(new MascotaPerfil(R.drawable.bulldog, 16));
-        fotos_de_muro.add(new MascotaPerfil(R.drawable.bulldog, 21));
-        fotos_de_muro.add(new MascotaPerfil(R.drawable.bulldog, 29));
-    }*/
 
     private void enlazarVistaControlador(View v) {
         fotoPerfil = (CircularImageView) v.findViewById(R.id.fotoPerfil);

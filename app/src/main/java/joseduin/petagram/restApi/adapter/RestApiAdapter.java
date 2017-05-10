@@ -39,4 +39,20 @@ public class RestApiAdapter {
         return gsonBuilder.create();
     }
 
+    public EndPointsApi establecerConexionRestApiFirebase() {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(ConstantesRestApi.ROOT_FIREBASE)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        return retrofit.create(EndPointsApi.class);
+    }
+
+    public EndPointsApi establecerConexionRestApiFirebaseInstagram() {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(ConstantesRestApi.ROOT_FIREBASE)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        return retrofit.create(EndPointsApi.class);
+    }
+
 }

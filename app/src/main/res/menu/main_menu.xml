@@ -10,4 +10,8 @@
     <item android:title="@string/configurar_cuenta"
         android:id="@+id/configurar_cuenta"/>
 
+    <item android:title="@string/recibir_notificaciones"
+        android:id="@+id/recibir_notificaciones"/>
+
+
 </menu>

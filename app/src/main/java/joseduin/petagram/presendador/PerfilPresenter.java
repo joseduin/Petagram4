@@ -37,6 +37,7 @@ public class PerfilPresenter implements IPerfilPresenter {
     public void obtenerInformacionUsuario() {
 
         SharedPreferences pref = context.getSharedPreferences("usuario", Context.MODE_PRIVATE);
+        final SharedPreferences.Editor editor = pref.edit();
         final String userId = pref.getString("id",  "1563600885");
 
         RestApiAdapter restInstagramApiAdapter = new RestApiAdapter();
@@ -51,6 +52,11 @@ public class PerfilPresenter implements IPerfilPresenter {
             public void onResponse(Call<MascotaPerfilResponse> call, Response<MascotaPerfilResponse> response) {
                 MascotaPerfilResponse perfilResponse = response.body();
                 perfil = perfilResponse.getMascotaPerfil();
+
+                editor.putString("nombre", perfil.getNombre());
+                editor.putString("id", perfil.getId());
+                editor.commit();
+
                 iPerfilMascotaFragmentView.mostrarPerfil(perfil);
                 buscarFotos(userId);
             }

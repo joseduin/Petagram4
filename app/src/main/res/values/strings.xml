@@ -36,5 +36,6 @@
     <string name="petagram">Petagram</string>
     <string name="escribe_un_usuario">Escribe tu usuario</string>
     <string name="guardar_cuenta">Guardar Cuenta</string>
+    <string name="recibir_notificaciones">Recibir Notificaciones</string>
 
 </resources>
