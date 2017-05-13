@@ -106,8 +106,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void getFirebaseToken() {
         String refreshedToken = FirebaseInstanceId.getInstance().getToken();
-        //enviarTokenRegistro(refreshedToken);
-        registrarusuario(refreshedToken);
+        if (refreshedToken != null) {
+            registrarusuario(refreshedToken);
+        } else {
+            Toast.makeText(this, "TOKEN NULL", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void registrarusuario(String refreshedToken) {

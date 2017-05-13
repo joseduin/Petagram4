@@ -5,8 +5,11 @@ import com.google.gson.GsonBuilder;
 
 import joseduin.petagram.restApi.ConstantesRestApi;
 import joseduin.petagram.restApi.EndPointsApi;
+import joseduin.petagram.restApi.desealizador.LikeDeserializador;
 import joseduin.petagram.restApi.desealizador.MascotaDesealizador;
 import joseduin.petagram.restApi.desealizador.MascotaPerfilDesealizador;
+import joseduin.petagram.restApi.modelo.LikeFirebaseResponse;
+import joseduin.petagram.restApi.modelo.LikeInstagramResponse;
 import joseduin.petagram.restApi.modelo.MascotaMediaResponse;
 import joseduin.petagram.restApi.modelo.MascotaPerfilResponse;
 import retrofit2.Retrofit;
@@ -53,6 +56,12 @@ public class RestApiAdapter {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         return retrofit.create(EndPointsApi.class);
+    }
+
+    public Gson construyeGsonDeserializadorDarLike() {
+        GsonBuilder gsonBuilder = new GsonBuilder();
+        gsonBuilder.registerTypeAdapter(LikeInstagramResponse.class, new LikeDeserializador());
+        return gsonBuilder.create();
     }
 
 }

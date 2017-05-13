@@ -15,12 +15,14 @@ public class Mascota {
 
     private String id_insta;
     private String url_foto;
+    private String media_id;
 
-    public Mascota(String id_insta, String nombre, String url_foto, int likes) {
+    public Mascota(String id_insta, String nombre, String url_foto, int likes, String media_id) {
         this.id_insta = id_insta;
         this.nombre = nombre;
         this.url_foto = url_foto;
         this.likes = likes;
+        this.media_id = media_id;
     }
 
     public Mascota(int foto, String nombre, String raza, int edad, int likes) {
@@ -33,6 +35,14 @@ public class Mascota {
 
     public Mascota() {
 
+    }
+
+    public String getMedia_id() {
+        return media_id;
+    }
+
+    public void setMedia_id(String media_id) {
+        this.media_id = media_id;
     }
 
     public String getId_insta() {

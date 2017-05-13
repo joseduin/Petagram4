@@ -2,6 +2,8 @@ package joseduin.petagram.restApi;
 
 import joseduin.petagram.restApi.modelo.FirebaseResponse;
 import joseduin.petagram.restApi.modelo.InstagramFirebaseResponse;
+import joseduin.petagram.restApi.modelo.LikeFirebaseResponse;
+import joseduin.petagram.restApi.modelo.LikeInstagramResponse;
 import joseduin.petagram.restApi.modelo.MascotaMediaResponse;
 import joseduin.petagram.restApi.modelo.MascotaPerfilResponse;
 import retrofit2.Call;
@@ -35,4 +37,13 @@ public interface EndPointsApi {
     Call<InstagramFirebaseResponse> registrarUsuario(@Field("id_dispositivo") String id_dispositivo,
                                                      @Field("id_usuario_instagram") String id_usuario_instagram);
 
+    @FormUrlEncoded
+    @POST(ConstantesRestApi.KEY_POST_REGISTRA_LIKE)
+    Call<LikeFirebaseResponse> registrarLike(@Field("id_media_instagram") String id_media_instagram,
+                                             @Field("id_instagram") String id_sender_instagram);
+
+    @FormUrlEncoded
+    @POST(ConstantesRestApi.URL_POST_LIKE)
+    Call<LikeInstagramResponse> postLikeInstagram(@Path("media-id") String id_media_instagram,
+                                                  @Field("access_token") String access_token);
 }

@@ -37,19 +37,19 @@ public class MascotaDesealizador implements JsonDeserializer<MascotaMediaRespons
         ArrayList<Mascota> mascotas = new ArrayList<>();
         for (int i = 0; i < mascotaResponseData.size(); i++) {
             JsonObject mascotaResponseDataObject = mascotaResponseData.get(i).getAsJsonObject();
-Log.d("Media", mascotaResponseDataObject.toString());
+
             JsonObject userJson = mascotaResponseDataObject.getAsJsonObject(JsonKeys.USER);
             String id = userJson.get(JsonKeys.USER_ID).getAsString();
             String full_name = userJson.get(JsonKeys.USER_FULLNAME).getAsString();
 
-
+            String imagesIdJson = mascotaResponseDataObject.get(JsonKeys.MEDIA_ID).getAsString();
             JsonObject imagesJson = mascotaResponseDataObject.getAsJsonObject(JsonKeys.MEDIA_IMAGES);
             JsonObject standardJson = imagesJson.getAsJsonObject(JsonKeys.MEDIA_STANDARD_RESOLUTION);
             String url_foto = standardJson.get(JsonKeys.MEDIA_URL).getAsString();
 
             JsonObject likesJson = mascotaResponseDataObject.getAsJsonObject(JsonKeys.MEDIA_LIKES);
             int likes = likesJson.get(JsonKeys.MEDIA_LIKES_COUNT).getAsInt();
-            mascotas.add(new Mascota(id, full_name, url_foto, likes));
+            mascotas.add(new Mascota(id, full_name, url_foto, likes, imagesIdJson));
         }
         return mascotas;
     }

@@ -18,10 +18,13 @@ public final class ConstantesRestApi {
     public static final String KEY_GET_RECENT_MEDIA_USER = "users/{user-id}/media/recent/";
     public static final String URL_GET_RECENT_MEDIA_USER = KEY_GET_RECENT_MEDIA_USER + KEY_ACCESS_TOKEN + ACCESS_TOKEN;
 
+    public static final String URL_POST_LIKE = "media/{media-id}/likes";
+
     public static final String KEY_GET_INFORMATION_USER = "users/{user-id}/";
     public static final String URL_GET_INFORMATION_USER = KEY_GET_INFORMATION_USER + KEY_ACCESS_TOKEN + ACCESS_TOKEN;
 
     public static final String ROOT_FIREBASE = "https://whispering-inlet-59854.herokuapp.com/";
     public static final String KEY_POST_ID_TOKEN = "token-device/";
     public static final String KEY_POST_ID_INSTAGRAM = "registrar-usuario/";
+    public static final String KEY_POST_REGISTRA_LIKE = "registrar-like/";
 }
